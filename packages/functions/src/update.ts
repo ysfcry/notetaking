@@ -9,7 +9,7 @@ export const main = handler(async (event) => {
     TableName: Table.Donemproje1.tableName,
     Key: {
       // yeni oge ozellikleri
-      userId: "123", // user kimlik
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId, // user kimlik
       noteId: event?.pathParameters?.id, // not path
     },
     // 'UpdateExpression' guncellenecekleri tanimla

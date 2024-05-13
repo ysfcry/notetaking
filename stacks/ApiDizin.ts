@@ -8,6 +8,7 @@ export function ApiDizin({ stack }: StackContext) {
   //api olusturma
   const api = new Api(stack, "Api", {
     defaults: {
+      authorizer: "iam",
       function: {
         bind: [table],
       },

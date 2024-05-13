@@ -6,7 +6,7 @@ export const main = handler(async (event) => {
   const params = {
     TableName: Table.Donemproje1.tableName,
     Key: {
-      userId: "123", // kull kimligi
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId, // kull kimligi
       noteId: event?.pathParameters?.id, // path kimlik
     },
   };

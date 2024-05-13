@@ -12,7 +12,7 @@ export const main = handler(async (event) => {
     // 'ExpressionAttributeValues' kosuldaki degeri tanimla
     // - ':userId': defines 'userId' yazar kimligi olarak tanımla
     ExpressionAttributeValues: {
-      ":userId": "123",
+      ":userId": event.requestContext.authorizer?.iam.cognitoIdentity.identityId,
     },
   };
 

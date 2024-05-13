@@ -1,6 +1,8 @@
+import { DogrulamaDizin } from "./stacks/DogrulamaDizin";
 import { SSTConfig } from "sst";
 import { DepolamaDizini } from "./stacks/DepolamaDizini";
 import { ApiDizin } from "./stacks/ApiDizin";
+
 
 export default {
   config(_input) {
@@ -10,6 +12,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(DepolamaDizini).stack(ApiDizin);
+    app.stack(DepolamaDizini).stack(ApiDizin).stack(DogrulamaDizin);
   },
 } satisfies SSTConfig;

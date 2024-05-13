@@ -7,7 +7,7 @@ export const main = handler(async (event) => {
     TableName: Table.Donemproje1.tableName,
     // key bölüm keyi ve sıralama keyi tanımlar
     Key: {
-      userId: "123", // yazar id
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId, // yazar id
       noteId: event?.pathParameters?.id, // note path
     },
   };

@@ -16,7 +16,7 @@ export const main = handler(async (event) => {
    const params = {
     TableName: Table.Donemproje1.tableName,
     Item: {
-      userId: "123", //kisi id
+      userId: event.requestContext.authorizer?.iam.cognitoIdentity.identityId, //kisi id
       noteId: uuid.v1(), //benzersiz uuid
       content: data.content, // istek ayristirma
       attachment: data.attachment, // istek ayristirma
