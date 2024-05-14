@@ -2,6 +2,7 @@ import { DogrulamaDizin } from "./stacks/DogrulamaDizin";
 import { SSTConfig } from "sst";
 import { DepolamaDizini } from "./stacks/DepolamaDizini";
 import { ApiDizin } from "./stacks/ApiDizin";
+import { FrontendStack } from "./stacks/FrontendStack";
 
 
 export default {
@@ -12,6 +13,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(DepolamaDizini).stack(ApiDizin).stack(DogrulamaDizin);
+    app.stack(DepolamaDizini).stack(ApiDizin).stack(DogrulamaDizin).stack(FrontendStack);
   },
 } satisfies SSTConfig;
