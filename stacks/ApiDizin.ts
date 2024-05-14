@@ -13,6 +13,7 @@ export function ApiDizin({ stack }: StackContext) {
         bind: [table],
       },
     },
+    cors: true,
     routes: {
       "GET /donemproje1": "packages/functions/src/list.main",
       "POST /donemproje1": "packages/functions/src/create.main",
