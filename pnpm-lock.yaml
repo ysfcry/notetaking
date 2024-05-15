@@ -47,7 +47,7 @@ importers:
         version: 2.41.5(@aws-sdk/client-sso-oidc@3.572.0(aws-crt@1.21.2))(@types/react@18.3.2)(aws-crt@1.21.2)
       vitest:
         specifier: ^1.6.0
-        version: 1.6.0(@types/node@20.12.11)
+        version: 1.6.0(@types/node@20.12.11)(terser@5.31.0)
 
   packages/frontend:
     dependencies:
@@ -100,6 +100,9 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.5.0
         version: 3.6.0(@swc/helpers@0.5.11)(vite@5.2.11(@types/node@20.12.11)(terser@5.31.0))
+      amazon-cognito-identity-js:
+        specifier: ^6.3.12
+        version: 6.3.12
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -145,7 +148,7 @@ importers:
         version: 2.41.5(@aws-sdk/client-sso-oidc@3.572.0(aws-crt@1.21.2))(@types/react@18.3.2)(aws-crt@1.21.2)
       vitest:
         specifier: ^1.6.0
-        version: 1.6.0(@types/node@20.12.11)
+        version: 1.6.0(@types/node@20.12.11)(terser@5.31.0)
 
 packages:
 
@@ -2965,6 +2968,9 @@ packages:
 
   ajv@8.13.0:
     resolution: {integrity: sha512-PRA911Blj99jR5RMeTunVbNXMF6Lp4vZXnk5GQjcnUWUTsrXtekg/pnmFFI2u/I36Y/2bITGS30GZCXei6uNkA==}
+
+  amazon-cognito-identity-js@6.3.12:
+    resolution: {integrity: sha512-s7NKDZgx336cp+oDeUtB2ZzT8jWJp/v2LWuYl+LQtMEODe22RF1IJ4nRiDATp+rp1pTffCZcm44Quw4jx2bqNg==}
 
   amazon-cognito-identity-js@6.3.13:
     resolution: {integrity: sha512-AOROAQHQYvXYnhzhB9L1cZdz+linq/xaPTBfXhvXsx1tyhbbzmA7HX8Ap3mKBPsjsG8UWfzDhdRCb7hmH3S14A==}
@@ -11054,6 +11060,16 @@ snapshots:
       require-from-string: 2.0.2
       uri-js: 4.4.1
 
+  amazon-cognito-identity-js@6.3.12:
+    dependencies:
+      '@aws-crypto/sha256-js': 1.2.2
+      buffer: 4.9.2
+      fast-base64-decode: 1.0.0
+      isomorphic-unfetch: 3.1.0
+      js-cookie: 2.2.1
+    transitivePeerDependencies:
+      - encoding
+
   amazon-cognito-identity-js@6.3.13:
     dependencies:
       '@aws-crypto/sha256-js': 1.2.2
@@ -14211,7 +14227,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@1.6.0(@types/node@20.12.11):
+  vite-node@1.6.0(@types/node@20.12.11)(terser@5.31.0):
     dependencies:
       cac: 6.7.14
       debug: 4.3.4
@@ -14238,7 +14254,7 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.31.0
 
-  vitest@1.6.0(@types/node@20.12.11):
+  vitest@1.6.0(@types/node@20.12.11)(terser@5.31.0):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -14258,7 +14274,7 @@ snapshots:
       tinybench: 2.8.0
       tinypool: 0.8.4
       vite: 5.2.11(@types/node@20.12.11)(terser@5.31.0)
-      vite-node: 1.6.0(@types/node@20.12.11)
+      vite-node: 1.6.0(@types/node@20.12.11)(terser@5.31.0)
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.12.11
